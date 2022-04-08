@@ -1,4 +1,4 @@
-/*const express = require('express')
+const express = require('express')
 app = express()
 
 var url = require('url');
@@ -31,7 +31,9 @@ app.get('/2plus2', (request, response) => {
 	response.type('text/plain')
 	response.send('4')
 })
-
+app.get('/',(req, res) =>{
+	res.send('hey');
+})
 // Add x and y which are both passed in on the URL. 
 app.get('/add-two-integers', (request, response) => {
 	console.log('Calling "/add-two-integers" on the Node.js server.')
@@ -139,7 +141,7 @@ app.listen(port, () => console.log(
   `Express started at \"http://localhost:${port}\"\n` +
   `press Ctrl-C to terminate.`)
 )
-*/
+/*
 const express			= require('express');
 const session			= require('express-session');
 const hbs				= require('express-handlebars');
@@ -219,7 +221,7 @@ User.findOneAndUpdate({username : 'a'},(err,data)=> {$inc : {gamesplayed : 1}});
 /*app.get('/about', (req, res) => {
 	res.render("index", { title: "About" });
 });
-*/
+*//*
 app.get('/about', isLoggedIn, (req, res) => {
 	res.send('about');
 });
@@ -293,3 +295,4 @@ app.post('/register/done', async (req, res) => {
 app.listen(3000, () => {
 	console.log("Listening on port 3000");
 });
+*/
