@@ -9,6 +9,9 @@
         "start": "node index.js"
     },
     "dependencies": {
-        "express": "^4.17.3"
+        "dotenv": "^16.0.0",
+        "express": "^4.17.3",
+        "passport-azure-ad": "^4.3.1",
+        "passport-azure-oauth2": "^0.1.0"
     }
 }
