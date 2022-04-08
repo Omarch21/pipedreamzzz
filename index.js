@@ -1,4 +1,4 @@
-const express = require('express')
+/*const express = require('express')
 app = express()
 
 var url = require('url');
@@ -19,7 +19,7 @@ app.get('/about', (request, response) => {
 	response.send('About Node.js on Azure Template.')
 })
 
-app.get('/version', (request, response) => {
+app.get('/version', (request, response) => { 
 	console.log('Calling "/version" on the Node.js server.')
 	response.type('text/plain')
 	response.send('Version: '+majorVersion+'.'+minorVersion)
@@ -141,7 +141,7 @@ app.listen(port, () => console.log(
   `Express started at \"http://localhost:${port}\"\n` +
   `press Ctrl-C to terminate.`)
 )
-/*
+*/
 const express			= require('express');
 const session			= require('express-session');
 const hbs				= require('express-handlebars');
@@ -182,7 +182,7 @@ app.use(passport.session());
 passport.serializeUser(function (user, done) {
 	done(null, user.id);
 });
-
+const port = process.env.PORT || 3000
 passport.deserializeUser(function (id, done) {
 	User.findById(id, function (err, user) {
 		done(err, user);
@@ -216,12 +216,12 @@ function isLoggedOut(req, res, next) {
 app.get('/', isLoggedOut, (req, res) => {
 	res.render("home", { title: "Home" });
 });
-User.findOne({username: 'a'},(err,data)=> console.log(data));
+/*User.findOne({username: 'a'},(err,data)=> console.log(data));
 User.findOneAndUpdate({username : 'a'},(err,data)=> {$inc : {gamesplayed : 1}});
 /*app.get('/about', (req, res) => {
 	res.render("index", { title: "About" });
 });
-*//*
+*/
 app.get('/about', isLoggedIn, (req, res) => {
 	res.send('about');
 });
@@ -291,8 +291,20 @@ app.post('/register/done', async (req, res) => {
 		});
 	});
 
-
-app.listen(3000, () => {
+	app.use((request, response) => {
+		response.type('text/plain')
+		response.status(404)
+		response.send('404 - Not Found')
+	  })
+	  
+	  // Custom 500 page.
+	  app.use((err, request, response, next) => {
+		console.error(err.message)
+		response.type('text/plain')
+		response.status(500)
+		response.send('500 - Server Error')
+	  })
+	  
+app.listen(port, () => {
 	console.log("Listening on port 3000");
 });
-*/
