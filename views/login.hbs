@@ -1,0 +1,26 @@
+
+    <head>
+        <meta charset="UTF-8">
+        <title> Login </title>
+        <link rel="stylesheet" href="loginindex.css">
+    </head>
+    <body>
+         <br>
+		 <br>
+		 <br><br><br>
+            <nav>
+            <form action="/login" method="POST">
+            {{#if error}}
+            <p class="err-msg">Username or password is incorrect</p>
+            {{/if }}
+            <label class="loginn"> Hot-Rocks</label> <br>
+			<br>
+            <label> Username </label> <br> <input type="text" class="emailt"name="username" id="username" placeholder="Enter your username" required/> <br>
+            <label> Password </label> <br> <input type="password" class="passw"name="password" id="password" placeholder="Enter your password" required/> <br>
+            <input class ="submitbutton" type="submit" value="Login"/>
+            </form>
+        </nav>
+		<div class="regmore">
+		<br> <a href="register" class="registerbut"> Register </a>
+		</div>
+    </body>
