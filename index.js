@@ -5,6 +5,7 @@ const mongoose			= require('mongoose');
 const passport			= require('passport');
 const localStrategy		= require('passport-local').Strategy;
 const bcrypt			= require('bcrypt');
+//const bcrypt			= require('bcrypt-nodejs');
 const app				= express();
 const bodyparser        = require('body-parser');
 const port = process.env.PORT || 3000
