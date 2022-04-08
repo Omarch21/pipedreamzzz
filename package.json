@@ -1,18 +1,25 @@
 {
-    "name": "app-service-hello-world",
-    "description": "Simple Hello World Node.js sample for Azure App Service",
-    "version": "0.0.1",
-    "private": true,
-    "license": "MIT",
-    "author": "Microsoft",
+    "name": "yout",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
     "scripts": {
-        "start": "node index.js"
+        "start": "nodemon app.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "nodemon": "^2.0.6"
     },
     "dependencies": {
+        "bcrypt": "^5.0.0",
         "dotenv": "^16.0.0",
         "express": "^4.17.3",
-        "express-session": "^1.17.2",
-        "passport-azure-ad": "^4.3.1",
-        "passport-azure-oauth2": "^0.1.0"
+        "express-handlebars": "^5.3.5",
+        "express-session": "^1.17.1",
+        "mongoose": "^5.11.10",
+        "passport": "^0.4.1",
+        "passport-local": "^1.0.0"
     }
 }
