@@ -70,7 +70,7 @@ function isLoggedOut(req, res, next) {
 	res.redirect('/');
 }
 // ROUTES
-app.get('/', isLoggedOut, (req, res) => {
+app.get('/', (req, res) => {
 	res.render("home", { title: "Home" });
 });
 /*User.findOne({username: 'a'},(err,data)=> console.log(data));
